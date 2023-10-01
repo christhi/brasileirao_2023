@@ -4,8 +4,9 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-          <ObjectHeader title="Campeonato Brasileiro FioriNET" id="objheader"
-          number="22ª"
+          <ObjectHeader 
+          title="{ModeloDadosGerais>/nome}" id="objheader"
+          number="{ModeloDadosGerais>/rodada_atual/rodada}a"
           numberUnit="rodada"
           >
           </ObjectHeader>
@@ -13,7 +14,9 @@
           <IconTabBar id="icontabbar">
             <items>
                 <IconTabFilter text="Classificação" icon="sap-icon://competitor" id="tabClassificacao">
-                    <Table id="tabelaClassificacao" >
+                    
+                  <Table id="tabelaClassificacao"
+                  items="{ModeloTabela>/Classificacao}" >
                         <columns>
                          <Column >
                             <Text text="Posição"></Text>
@@ -64,35 +67,22 @@
                         <items>
                            <ColumnListItem >
                             <cells>
-                                <Text text="1"></Text>
-                                <Image width="50%" src="https://logodownload.org/wp-content/uploads/2016/11/botafogo-logo-0.png"></Image>
-                                <Text text="Botafogo"></Text>
-                                <Text text="51"></Text>
-                                <Text text="24"></Text>
-                                <Text text="16"></Text>
-                                <Text text="3"></Text>
-                                <Text text="5"></Text>
-                                <Text text="39"></Text>
-                                <Text text="15"></Text>
-                                <Text text="24"></Text>
+                                <Text text="{ModeloTabela>posicao}"></Text>
+                                <Image width="50%" 
+                                src="{ModeloTabela>time/escudo}"></Image>
+                                <Text text="{ModeloTabela>time/nome_popular}"></Text>
+                                <Text text="{ModeloTabela>pontos}"></Text>
+                                <Text text="{ModeloTabela>jogos}"></Text>
+                                <Text text="{ModeloTabela>vitorias}"></Text>
+                                <Text text="{ModeloTabela>empates}"></Text>
+                                <Text text="{ModeloTabela>derrotas}"></Text>
+                                <Text text="{ModeloTabela>gols_pro}"></Text>
+                                <Text text="{ModeloTabela>gols_contra}"></Text>
+                                <Text text="{ModeloTabela>saldo_gols}"></Text>
                             </cells>
                            </ColumnListItem> 
 
-                           <ColumnListItem >
-                            <cells>
-                                <Text text="2"></Text>
-                                <Image width="50%" src="https://logodownload.org/wp-content/uploads/2015/05/palmeiras-logo-0.png"></Image>
-                                <Text text="Palmeiras"></Text>
-                                <Text text="44"></Text>
-                                <Text text="24"></Text>
-                                <Text text="12"></Text>
-                                <Text text="8"></Text>
-                                <Text text="4"></Text>
-                                <Text text="38"></Text>
-                                <Text text="18"></Text>
-                                <Text text="20"></Text>
-                            </cells>
-                           </ColumnListItem> 
+                           
                         </items>
 
                     </Table>

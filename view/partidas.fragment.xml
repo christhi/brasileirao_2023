@@ -8,6 +8,7 @@
 
 
     <Table id="partidasTable" headerText="Partidas"
+        items="{ModeloPartidas>/partidas}"
         inset="false">
         <columns>
             <Column width="10%" hAlign="Right">
@@ -27,30 +28,18 @@
             <ColumnListItem vAlign="Middle">
                 <cells>
 
-                    <Image src="https://logodownload.org/wp-content/uploads/2017/02/goias-logo-0-1.png" width="15%" />
+                    <Image src="{ModeloPartidas>time_mandante/escudo}" width="15%" />
                     <VBox>
-                        <Text text="Goiás 0 x 0 Internacional" />
-                        <Text text="02/09 16:00" />
-                        <Text text="finalizado" />
+                        <Text text="{ModeloPartidas>placar}" />
+                        <Text text="{ModeloPartidas>data_realizacao} {ModeloPartidas>hora_realizacao}" />
+                        <Text text="{ModeloPartidas>status}" />
                     </VBox>
-                    <Image src="https://logodownload.org/wp-content/uploads/2015/05/internacional-logo-0.png" width="15%" />
+                    <Image src="{ModeloPartidas>time_visitante/escudo}" width="15%" />
 
                 </cells>
             </ColumnListItem>
 
-            <ColumnListItem vAlign="Middle">
-                <cells>
-
-                    <Image src="https://logodownload.org/wp-content/uploads/2016/11/botafogo-logo-0.png" width="15%" />
-                    <VBox>
-                        <Text text="Botafogo 1 x 2 Flamengo" />
-                        <Text text="02/09 21:00" />
-                        <Text text="finalizado" />
-                    </VBox>
-                    <Image src="https://logodownload.org/wp-content/uploads/2016/09/flamengo-logo-0.png" width="15%" />
-
-                </cells>
-            </ColumnListItem>
+            
         </items>
     </Table>
 
